@@ -6,13 +6,8 @@ from pprint import pprint
 search = input('Введите наименование вакансии: ')
 
 url = 'https://hh.ru/search/vacancy'
-params = {'area': 1,
-          'fromSearchLine': 'true',
-          'text': search,
-          'from': 'suggest_post',
-          'page': '0',
-          'hhtmFrom': 'vacancy_search_list'
-          }
+params = {'text': search,
+          'page': '0'}
 
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'}
 response = requests.get(url, params=params, headers=headers)
@@ -58,6 +53,5 @@ while vacancy_list:
 
 pprint(vacancies)
 
-with open('lesson2.json', 'w') as file:
+with open('lesson2.json', 'w', encoding='utf-8') as file:
     json.dump(vacancies, file)
-
