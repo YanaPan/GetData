@@ -64,7 +64,7 @@ while vacancy_list:
     vacancy_list = dom.find_all('div', {'class': 'vacancy-serp-item__row_header'})
 
 for vacancy in hh.find({'$or': [{'salary_min': {'$gt': 100000}}, {'salary_max': {'$gt': 100000}}]}):
-    pprint(vacancy)
+    pprint(vacancy) # ввыведение информации по вакансиям с зарплатой от 100 000
 
 # for vacancy in hh.find({}):
 #     pprint(vacancy)
